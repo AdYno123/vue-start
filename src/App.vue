@@ -73,16 +73,16 @@ export default {
     </section>
     <section>
       <h2 class="text-3xl font-bold">Vymazané Položky:</h2>
+      <ul>
+        <li
+          v-for="item in deletedItems"
+          :key="`item-${item.id}`"
+          class="line-through"
+        >
+          <span @click="deleteItem(item)" class="mt-4">X</span>
+          {{ item.text }}
+        </li>
+      </ul>
     </section>
-    <ul>
-      <li
-        v-for="item in deletedItems"
-        :key="`item-${item.id}`"
-        class="line-through"
-      >
-        <span @click="deleteItem(item)" class="mt-4">X</span>
-        {{ item.text }}
-      </li>
-    </ul>
   </div>
 </template>
